@@ -408,3 +408,8 @@ unsigned char OpenTherm::getFault() {
 unsigned long OpenTherm::getSlaveConfiguration() {
 	return sendRequest(buildSlaveConfigurationRequest());
 }
+
+bool OpenTherm::setMaximumrelativemodulationlevel (float percentages) {
+	unsigned long response = sendRequest(buildSetMaximumrelativemodulationlevel (percentages));
+	return isValidResponse(response);
+}
