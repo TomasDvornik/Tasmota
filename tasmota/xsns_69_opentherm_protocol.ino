@@ -74,7 +74,10 @@ OpenThermCommand sns_opentherm_commands[] = {
      .m_ot_make_request = sns_opentherm_set_boiler_temperature,
      .m_ot_parse_response = sns_opentherm_parse_set_boiler_temperature,
      .m_ot_appent_telemetry = sns_opentherm_tele_boiler_temperature},
-    {// Set Hot Water temperature
+    {// Set Flame modulation
+     .m_command_name = "FLMW",
+     .m_command_code = 0,
+    // Set Hot Water temperature
      .m_command_name = "HWTMP",
      .m_command_code = 0,
      // OpenTherm ID(56) may not be supported
@@ -171,7 +174,7 @@ OpenThermCommand sns_opentherm_commands[] = {
      .m_ot_make_request = sns_opentherm_get_generic_u16,
      .m_ot_parse_response = sns_opentherm_parse_generic_u16,
      .m_ot_appent_telemetry = sns_opentherm_tele_u8_u8},
-    {// Read Maximum relative modulation level setting (%)
+    {// Write Maximum relative modulation level setting (%)
      .m_command_name = "OT14",
      .m_command_code = (uint8_t)OpenThermMessageID::MaxRelModLevelSetting,
      .m_flags = 0,
